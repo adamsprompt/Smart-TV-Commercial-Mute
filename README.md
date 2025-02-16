@@ -1,17 +1,21 @@
-# Adam S. Ford - Smart-TV-Commercial-Mute
+# Adam S. Ford - Smart TV Commercial Mute
 My mother manually mutes every commercial on television. I wanted to find a way to automate this for her. This is an on-going project, but here is the conversation started with ChatGTP to explore the subject...
 
-<a ADAM a> Are there third-party apps available to use on my modern internet-connected television? For example, is there a third-party app that will compress the volume to normalize the changes in volume between television shows and commercials?
+***Adam-***
+- Are there third-party apps available to use on my modern internet-connected television? For example, is there a third-party app that will compress the volume to normalize the changes in volume between television shows and commercials?
 
-Most modern smart TVs already include built‑in volume normalization features—often labeled “Auto Volume,” “Volume Leveling,” or “Stable Volume”—that help smooth out the differences between regular programming and louder commercials. For example, many Samsung and Philips TVs offer these settings directly in their menus, so you can adjust them without needing an extra app citeturn0search1 citeturn0search6.
+***ChatGTP-***
+- Most modern smart TVs already include built‑in volume normalization features—often labeled “Auto Volume,” “Volume Leveling,” or “Stable Volume”—that help smooth out the differences between regular programming and louder commercials. For example, many Samsung and Philips TVs offer these settings directly in their menus, so you can adjust them without needing an extra app
 
 As for third‑party apps, options are very limited. Due to the closed nature of most TV operating systems, manufacturers tend to integrate these features directly rather than allow external apps to modify the audio output. While a few Android‑based TV platforms might offer audio processing or equalizer apps on the Google Play Store, these are generally not designed specifically for compressing volume changes between content and ads, and they may require extra tweaking or even sideloading.
 
 In short, if your TV doesn’t have satisfactory volume normalization built‑in, you might consider using an external audio device (like a receiver with dynamic range compression) rather than searching for a third‑party app on the TV itself.
 
-I have an end-goal of using an app on my Samsung smart TV that will mute commercials. How would I create such an app? Please ask me questions for clarity.
+***Adam-***
+- I have an end-goal of using an app on my Samsung smart TV that will mute commercials. How would I create such an app? Please ask me questions for clarity.
 
-To help me understand your project better and give you the most relevant guidance, I have a few clarifying questions:
+***ChatGTP-***
+- To help me understand your project better and give you the most relevant guidance, I have a few clarifying questions:
 
 1. **Platform & Experience:**  
    - Are you already familiar with developing apps for Samsung Smart TVs (which typically run on Tizen OS)?  
@@ -31,9 +35,11 @@ To help me understand your project better and give you the most relevant guidanc
 
 Understanding these details will help narrow down the technical requirements and possible approaches. Could you share more about your current vision and any constraints you’re aware of?
 
-I am not familiar with Tizen OS. I want to process the audio stream locally on the TV. I want the app to automatically mute the TV when it detects a commercial. I am aware of restrictions against creating such an app to sell for profit, but I am not restricted to use such an app on the TV I own in my own home. 
+***Adam-***
+- I am not familiar with Tizen OS. I want to process the audio stream locally on the TV. I want the app to automatically mute the TV when it detects a commercial. I am aware of restrictions against creating such an app to sell for profit, but I am not restricted to use such an app on the TV I own in my own home. 
 
-Thanks for sharing those details. Based on what you've said, here are some questions to help refine the approach:
+***ChatGTP-***
+- Thanks for sharing those details. Based on what you've said, here are some questions to help refine the approach:
 
 1. **Development Environment:**  
    - Are you open to learning native Tizen app development (using C/C++ with Tizen Native APIs) as opposed to web-based development with JavaScript/HTML5? Native apps might offer more low‑level access that could be necessary for processing audio.
@@ -54,9 +60,11 @@ Thanks for sharing those details. Based on what you've said, here are some quest
 
 These questions will help pinpoint the technical path forward. Let me know your thoughts on these points, and we can dive deeper into specific documentation or strategies!
 
-I do not want to use a volume threshold to distinguish commercials from regular programming. I need to use a different method to distinguish commercials from regular programming. Yes, I would consider a hybrid solution where an external microcontroller or smartphone listens to the TV’s audio (via a microphone or direct connection) and sends mute commands to the TV over the network. If processing on the TV itself proves too restricted, yes, integrating an external device is acceptable.
+***Adam-***
+- I do not want to use a volume threshold to distinguish commercials from regular programming. I need to use a different method to distinguish commercials from regular programming. Yes, I would consider a hybrid solution where an external microcontroller or smartphone listens to the TV’s audio (via a microphone or direct connection) and sends mute commands to the TV over the network. If processing on the TV itself proves too restricted, yes, integrating an external device is acceptable.
 
-Great – that gives us a good starting point. Here are some more questions to help narrow down the approach:
+***ChatGTP-***
+- Great – that gives us a good starting point. Here are some more questions to help narrow down the approach:
 
 1. **Detection Method:**  
    - Since you don’t want to rely on a simple volume threshold, are you considering using a machine learning–based audio classifier (e.g., trained on features extracted from commercials vs. programming)?  
@@ -76,9 +84,11 @@ Great – that gives us a good starting point. Here are some more questions to h
 
 Answering these questions will help us define the technical requirements and the best path forward for your project. Let me know your thoughts!
 
-Yes, I am considering using a machine learning–based audio classifier (e.g., trained on features extracted from commercials vs. programming). I would prefer the use of a smartphone, both iOS and Android platforms. I would also consider the use of a Raspberry Pi or another microcontroller with sufficient processing power. I would like to mute the television in the simplest manner possible. I require the solution to automatically unmute when programming resumes. I desire the least amount of latency for these transitions possible, possibly less than one second. I would like access to a dataset of commercials versus regular programming for training purposes and the dataset must be updated every week. I would prefer to start with a pre-trained model and fine-tuning it.
+***Adam-***
+- Yes, I am considering using a machine learning–based audio classifier (e.g., trained on features extracted from commercials vs. programming). I would prefer the use of a smartphone, both iOS and Android platforms. I would also consider the use of a Raspberry Pi or another microcontroller with sufficient processing power. I would like to mute the television in the simplest manner possible. I require the solution to automatically unmute when programming resumes. I desire the least amount of latency for these transitions possible, possibly less than one second. I would like access to a dataset of commercials versus regular programming for training purposes and the dataset must be updated every week. I would prefer to start with a pre-trained model and fine-tuning it.
 
-Based on your answers, here’s an outline of one potential approach to creating an app that automatically mutes your TV during commercials:
+***ChatGTP-***
+- Based on your answers, here’s an outline of one potential approach to creating an app that automatically mutes your TV during commercials:
 
 ---
 
@@ -144,98 +154,3 @@ This hybrid approach—using a smartphone or external microcontroller for real�
 Would you like more details on any specific part of this approach (e.g., setting up the audio processing pipeline, model fine‑tuning, or TV integration APIs)? Let me know what you'd like to dive deeper into!
 
 ---
-
-*References:*  
-citeturn0search9 (YouTube’s Stable Volume Normalization article for ideas on audio consistency)  
-citeturn0search7 (Samsung Community discussion on volume leveling issues)
-
-<h1>Adam S. Ford - <i>THIS PAGE UNDER CONSTRUCTION</i> <br/><a href="https://www.linkedin.com/in/adam-spach-ford">Cyber Security Analyst, GRC Specialist, Prompt Engineer,</a> <br/> <a href="https://github.com/adamsprompt">and AI Agentry Specialist</a></h1>
-
-<h2> Cybersecurity Projects:</h2>
-
-- <b>  Build a Real-Time Intrusion Detection System (IDS) - Utilize Python and Open Source Libraries</b>
-  - [ Build a Real-Time IDS - Practice with Python and Open-Source Libraries](https://github.com/joshmadakor1/Algorithms-Practice)
-    - Credit: https://github.com/jatin009v
-        
-<h2> Governance, Risk, and Compliance (GRC) Projects:</h2>
-
-- <b>  Name of Project A  </b>
-  - [ 2nd Name of Project A such as - Praciting DS & Algos in Python](insert web address)
-- <b>  Name of Project B  </b>
-  - [ 2nd Name of Project B such as - Image Analysis Middleware](insert web address)
-
-<h2> Prompt Engineer Projects:</h2>
-
-- <b>  Name of Project A  </b>
-  - [ 2nd Name of Project A such as - Praciting DS & Algos in Python](insert web address)
-- <b>  Name of Project B  </b>
-  - [ 2nd Name of Project B such as - Image Analysis Middleware](insert web address)
-
-<h2> AI Agentry Projects:</h2>
-
-- <b>  Name of Project A  </b>
-  - [ 2nd Name of Project A such as - Praciting DS & Algos in Python](insert web address)
-- <b>  Name of Project B  </b>
-  - [ 2nd Name of Project B such as - Image Analysis Middleware](insert web address)
-
-<h2> Certifications:</h2>
-
-- <b>  CompTIA Sec+ ce Certification</b>
-  - Issued by: CompTIA
-  - Issued: August 2024 - Expires August 2027
-  - Credential ID: COMP001022613359
-  - [Certification Link:](https://www.credly.com/badges/4b9859b2-7a1f-4d88-b94c-00b2e7497bb9/linked_in_profile)
-- <b>  Vulnerability Management Detection and Response (VMDR) Certification</b>
-  - Issued by: Qualys
-  - Issued: November 2023
-  - [Certification Link:](https://www.qualys.com)
-- <b>  Incident Command Systems 100 (IC 100) Certification</b>
-  - Issued by: FEMA
-  - Issued: October 2024
-- <b>  Incident Command Systems 200 (IC 200) Certification</b>
-  - Issued by: FEMA
-  - Issued October 2024
-- <b>  Introduction to Generative AI Certification</b>
-  - Issued by: Google
-  - Issued: August 2023
-  - Credential ID: 4851450
-  - [Certification Link:](https://www.cloudskillsboost.google/public_profiles/85418996-2e69-4b46-b991-4c490af58fad/badges/4851450?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
-- <b>  Generative AI Fundamentals Certification</b>
-  - Issued by: Google
-  - Issued: August 2023
-  - Credential ID: 4853122
-  - [Certification Link:](https://www.cloudskillsboost.google/public_profiles/85418996-2e69-4b46-b991-4c490af58fad/badges/4853122?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
-- <b>  Introduction to Large Language Models Certification</b>
-  - Issued by: Google
-  - Issued: August 2023
-  - Credential ID: 4852303
-  - [Certification Link:](https://www.cloudskillsboost.google/public_profiles/85418996-2e69-4b46-b991-4c490af58fad/badges/4852303?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
-- <b>  Introduction to Responsible AI Certification</b>
-  - Issued by: Google
-  - Issued: August 2023
-  - Credential ID: 4852976
-  - [Certification Link:](https://www.cloudskillsboost.google/public_profiles/85418996-2e69-4b46-b991-4c490af58fad/badges/4852976?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
-- <b>  Responsible AI: Applying AI Principles with Google Cloud Certification</b>
-  - Issued by: Google
-  - Issued: August 2023
-  - Credential ID: 4854038
-  - [Certification Link:](https://www.cloudskillsboost.google/public_profiles/85418996-2e69-4b46-b991-4c490af58fad/badges/4854038?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
-- <b>  Python for Non-Programmers Certification</b>
-  - Issued by: LinkedIn Learning
-  - Issued: August 2023
-  - [Certification Link:](https://www.linkedin.com/learning/certificates/6316bfeb7d9328f741ac88ad90b6cb8035734f87673b616b2d240a68d26f740e)
-
-<h2> Connect with me:</h2>
-
-<a href="https://www.instagram.com/adamsford_working/">
-    <img alt="Instagram" src="https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=white&style=for-the-badge" />
-  </a>
-  <a href="https://www.linkedin.com/in/adam-spach-ford/"><img alt="Linkedin" src="https://img.shields.io/badge/linkedin-0077B5?logo=linkedin&logoColor=white&style=for-the-badge" /></a>
-</p>
-
-<h2> Popular YouTube Videos</h2>
-
-- <b>  [Name of YouTube video A](https://www.youtube.com/watch?v=a83ASGn_V_s)
-- <b>  [Name of YouTube video B](https://www.youtube.com/watch?v=a83ASGn_V_s)
-
-
