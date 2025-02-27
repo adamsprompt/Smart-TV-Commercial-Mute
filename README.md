@@ -1,4 +1,6 @@
 # Adam S. Ford - Smart TV Commercial Mute
+UPDATE: The more I research this, the more it looks like I will build a piece of hardware, such as a Raspberry Pi, program it, and physically attach it to her television. Research is on-going...
+
 My mother manually mutes every commercial on television. I wanted to find a way to automate this for her. This is an on-going project, but here is the conversation started with ChatGTP to explore the subject...
 
 ***Adam-***
